@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Komens</title>
+    </head>
+    <body>
+        <h3>Komens</h3>
+
+        <table style="width: 95%;">
+            <tr>
+                <th class="caption">Title</th> <th class="caption">Sender</th> <th class="caption">Date sent</th>
+            </tr>
+
+            {{msgs|safe}}
+
+        </table> <br>
+
+        <form class="refresh" action="/komens-reload" method="post">
+            Last update: {{lastUpdate}} <input type="submit" value="Refresh">
+        </form>
+
+        <a href="/">Go back</a>
+    </body>
+
+    <style>
+
+        table, th, td {
+          text-align: left;
+        }
+
+        .caption {
+            text-align: center;
+            background-color: darkgray;
+        }
+
+        .refresh {
+            position: absolute; 
+            right: 6%;
+        }
+
+    </style>
+</html>

@@ -1,0 +1,15 @@
+<html>
+
+<head>
+    <title>Login</title>
+</head>
+
+<form action="/login" method="post">
+    <a href="/choose-city">Choose your school</a> <br> <br>
+    URL Bakalářů: <input value="{{url}}" type="url" name="url" {{disableUrlBox}}> <input type="text" value="{{id}}" style="visibility: hidden;" name="id"> <br>
+    Username: <input type="text" name="usr"> <br>
+    Password: <input type="password" name="pswd"> <br>
+    <input type="submit" value="Login">
+</form>
+
+</html>

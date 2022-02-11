@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>{{name}} ({{abbrev}})</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th class="caption">Name: </th> <th class="info">{{name}}</th>
+            </tr>
+            <tr>
+                <th class="caption">Teacher: </th> <th class="info">{{teacher}}</th>
+            </tr>
+            <tr>
+                <th class="caption">Abbreviation: </th> <th class="info">{{abbrev}}</th>
+            </tr>
+        </table> <br>
+
+        <a href="/timetable-highlight/{{coords}}">Highlight in timetable</a> <br>
+        <a href="/timetable">Go back</a>
+    </body>
+
+    <style>
+        .caption {
+            text-align: right;
+            background-color: rgb(238, 238, 238);
+        }
+
+        .info {
+            text-align: left;
+            background-color: lightgray;
+        }
+    </style>
+</html>

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Timetable compare</title>
+    </head>
+
+    <body>
+        <h3>Compare days</h3>
+
+        <form action="/timetable_compare" method="post">
+            Day one: <select name="day1">
+                <option value="1">{{monday_name}}</option>>
+                <option value="2">{{tuesday_name}}</option>>
+                <option value="3">{{wednesday_name}}</option>>
+                <option value="4">{{thursday_name}}</option>>
+                <option value="5">{{friday_name}}</option>>
+            </select> <br>
+
+            Day two: <select name="day2">
+                <option value="1">{{monday_name}}</option>>
+                <option value="2">{{tuesday_name}}</option>>
+                <option value="3">{{wednesday_name}}</option>>
+                <option value="4">{{thursday_name}}</option>>
+                <option value="5">{{friday_name}}</option>>
+            </select> <br>
+
+            <input type="submit" value="Compare">
+        </form>
+
+        <b>{{error}}</b>
+
+        <table>
+            <tr>
+                <th class="captionRemove">[-]</th> <th class="captionAdd">[+]</th>
+            </tr>
+            {{compare|safe}}
+            </table> <br>
+
+        <a href="/timetable">Go back</a>
+
+    </body>
+
+    <style>
+        .remove {
+            color: red;
+            background-color: rgb(255, 153, 153);
+        }
+
+        .add {
+            color: rgb(71, 238, 71);
+            background-color: rgb(227, 252, 227);
+        }
+
+        table {
+            text-align: left;
+            display: {{visible}};
+        }
+
+        .captionAdd {
+            color: lightgreen;
+            text-align: center;
+        }
+
+        .captionRemove {
+            color: red;
+            text-align: center;
+        }
+
+        .table-link, .table-link:visited, .table-link:active {
+            color: inherit;
+            text-decoration: inherit;
+        }
+    </style>
+
+</html>

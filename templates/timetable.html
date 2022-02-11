@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>Timetable</title>
+    </head>
+    <body>
+        <h3>Timetable for {{name}}</h3>
+
+        {{timetable|safe}}   
+        
+        <form class="refresh" action="/timetable-reload" method="post">
+            Last update: {{lastUpdate}} <input type="submit" value="Refresh">
+        </form>
+
+        <a href="/timetable_compare">Compare days</a> <br>
+        <a href="/">Go back</a>
+    </body>
+
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+
+        .empty {
+            background-color: gray;
+        }
+
+        .subject {
+            background-color: darkgray;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .highlight {
+            background-color: lightgreen;
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
+
+        .caption, .time {
+            text-align: center;
+        }
+
+        .day {
+            text-align: right;
+        }
+
+        .refresh {
+            position: absolute; 
+            right: 1%;
+        }
+
+        a, a:visited, a:hover, a:active {
+            color: blue;
+        }
+    </style>
+</html>

@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Marks</title>
+    </head>
+    <body>
+        <h3>Marks</h3>
+
+        <table style="width: 100%;">
+            {{marks|safe}}
+        </table> <br>
+
+        <form class="refresh" action="/marks-reload" method="post">
+            Last update: {{lastUpdate}} <input type="submit" value="Refresh">
+        </form>
+
+        <a href="/">Go back</a>
+    </body>
+
+    <style>
+        .markBox {
+            border-style: none solid dotted none;
+            border-color: black black gray black;
+        }
+
+        .markBoxFinal {
+            border-style: none none dotted none;
+            border-color: gray;
+        }
+
+        .empty {
+            border-style: none none dotted none;
+            border-color: gray;
+        }
+
+        .markBoxL {
+            border-style: none solid none none;
+        }
+
+        .markBoxFinalL {
+            border-style: none none none none;
+        }
+
+        .emptyL {
+            border-style: none none none none;
+        }
+    
+        .markValue {
+            font-size: 255%;
+        }
+
+        .weight, .date, .caption {
+            color: gray;
+        }
+
+        .subject {
+            width: 10%;
+            background-color: darkgray;
+        }
+
+        .maxPoints {
+            color: gray;
+        }
+
+        .refresh {
+            position: absolute; 
+            right: 1%;
+        }
+    
+    </style>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Delete local cache?</title>
+    </head>
+
+    <body>
+        <h3>Are you sure you want to delete local cache for <span class="name"> {{name}}</span>?</h3>
+        <span class="note"><i>NOTE: This will sign you out.</i></span> <br> <br> <br>
+
+        <form action="/delete-cache" method="post"> <input type="submit" value="Yes."> </form> <a href="/"><input type="button" value="No."></a>
+    </body>
+
+    <style>
+        .name {
+            font-size: 150%;
+            color: blue;
+        }
+
+        .note {
+            color: gray;
+        }
+
+        form {
+            display: inline;
+        }
+    </style>
+</html>

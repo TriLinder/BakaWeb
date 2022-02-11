@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>{{title}}</title>
+    </head>
+    <body>
+        <h2>{{title}}</h2>
+        <p class="sender">{{sender}}</p>
+
+        <div class="body">
+        {{body|safe}}
+        </div> <br>
+
+        <a href="/komens">Go back</a>
+    </body>
+
+    <style>
+        .sender {
+            color: gray;
+        }
+
+        .body {
+            border:1px solid black;
+            background-color: lightgray;
+        }
+    </style>
+</html>

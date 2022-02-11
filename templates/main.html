@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>BakaWeb</title>
+    </head>
+    
+    <body>
+        <h3>{{name}}</h3>
+        <span style="color: gray;">Logged in as {{accountType}}.</span> <br> <br>
+
+        <a href="/marks">Marks</a> <br>
+        <a href="/timetable">Timetable</a> <br>
+        <a href="/komens">Komens</a> <br> <br>
+
+        
+        <a href="/logout">Logout</a> <br>
+        <a href="/delete-cache" class="deleteCache">Delete local cache</a> <br>
+    </body>
+
+    <style>
+        .deleteCache {
+            position: absolute; 
+            bottom: 1%;
+            right: 1%;
+        }
+    </style>
+</html>

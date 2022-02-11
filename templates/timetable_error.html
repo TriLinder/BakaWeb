@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h1>Error!</h1>
+        <p>{{error}}</p>
+        <p>You might want to refresh the timetable.</p>
+
+        <form class="refresh" action="/timetable-reload" method="post">
+            <input type="submit" value="Refresh">
+        </form>
+        <a href="/logout">Logout</a>
+    </body>
+</html>
