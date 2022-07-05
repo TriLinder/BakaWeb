@@ -14,10 +14,15 @@ def getMsgs(url, refresh_token, userID, forceRefresh) :
         msgs = s["komensMsgs"]
     except KeyError :
         msgs = requestAuthenticated(refresh_token, url, "/api/3/komens/messages/received", {}, "post").decode("utf-8")
-        msgs = json.loads(msgs)["Messages"]
+        
+        try :
+            msgs = json.loads(msgs)["Messages"]
+        except KeyError : #Komens module disabled
+            msgs = []
+        
         s["komensMsgs"] = msgs
         s["komensMsgs_lastUpdate"] = round(time.time())
-    
+
     s.close()
     return msgs
 
@@ -49,6 +54,9 @@ def getMsgsInfo(msgs) :
     return info
 
 def infoToHtml(msgs) :
+    if len(msgs) == 0 :
+        return "<tr><th>You have no messages.<th></tr>"
+    
     html = ""
 
     for msg in msgs :
