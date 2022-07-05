@@ -12,7 +12,7 @@ import time
 
 #--------CONFIG--------#
 
-allowCustomURLs = True #Might be a security risk, not recommended.
+allowCustomURLs = False #Might be a security risk, not recommended.
 
 #----------------------#
 

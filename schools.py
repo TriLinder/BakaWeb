@@ -1,7 +1,7 @@
+from requests.utils import requote_uri
 from collections import OrderedDict
 from bs4 import BeautifulSoup
 from pathlib import Path
-import urllib.parse
 import requests
 import shelve
 import time
@@ -41,6 +41,8 @@ def getSchools(search) :
     if not search in getCities() :
         return "invalidCity"
 
+    search = requote_uri(search.split(".")[0])
+
     s = shelve.open(str(Path("db/schools")))
 
     try :
@@ -50,7 +52,7 @@ def getSchools(search) :
             raise KeyError
 
     except KeyError :
-        r = requests.get("https://sluzby.bakalari.cz/api/v1/municipality/%s" % (urllib.parse.quote_plus(search.split(".")[0])))
+        r = requests.get("https://sluzby.bakalari.cz/api/v1/municipality/%s" % (search))
 
         xmlData = r.content.decode("utf-8")
 
@@ -77,7 +79,7 @@ def chooseCityHtml(cities) :
     html = ""
 
     for city in cities :
-        html = html + "<a href='/city/%s'>%s</a> <br>" % (city, city)
+        html = html + "<a href='/city/%s'>%s</a> <br>" % (requote_uri(city), city)
 
     return html
 
@@ -85,7 +87,7 @@ def chooseSchoolHtml(schools) :
     html = ""
 
     for school in schools :
-        html = html + "<a href='/login-school/%s/%s'>%s</a> <br>" % (school["search"], school["id"], school["name"])
+        html = html + "<a href='/login-school/%s/%s'>%s</a> <br>" % (requote_uri(school["search"]), school["id"], school["name"])
     
     return html
 
